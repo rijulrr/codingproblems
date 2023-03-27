@@ -52,5 +52,7 @@ int main() {
     auto res = mountain(arr);
 
     cout << res << endl;
+
+    return 0;
     
 }
