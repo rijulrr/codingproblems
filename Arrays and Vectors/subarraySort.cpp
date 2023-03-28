@@ -16,7 +16,7 @@ bool outOfOrder(vector<int> arr, int j) {
 
 }
 
-pair<int, int> subarraySort(vector<int> arr) {
+int subarraySort(vector<int> arr) {
 
     int n = arr.size();
     int smallest = std::numeric_limits<int>::max();
@@ -35,7 +35,7 @@ pair<int, int> subarraySort(vector<int> arr) {
     }
 
     if (smallest == std::numeric_limits<int>::max()) {
-        return {-1, -1};
+        return -1;
     }
 
     int left = 0;
@@ -49,7 +49,7 @@ pair<int, int> subarraySort(vector<int> arr) {
     }
 
 
-    return {left, right}; 
+    return right - left + 1;
 
 }
 
@@ -59,10 +59,10 @@ pair<int, int> subarraySort(vector<int> arr) {
 int main() {
 
 
-    vector<int> arr = {1, 2, 3, 4, 5, 8, 6, 7, 9, 10, 11};
+    vector<int> arr = {2,6,4,8,10,9,15};
     auto res = subarraySort(arr);
 
-    cout << res.first << " and " << res.second << endl;
+    cout << res << endl;
 
     return 0;
 }
